@@ -1,0 +1,56 @@
+/* Styling for the heading */
+.batch-heading {
+    text-align: center;
+    color: #b10c0c;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Card layout for batch details */
+  .batch-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styling for each batch detail */
+  .batch-card p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .batch-card p strong {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Batch not found message */
+  .not-found {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .batch-card {
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    .batch-card p {
+      font-size: 16px;
+    }
+  
+    .batch-heading {
+      font-size: 22px;
+    }
+  }
+  

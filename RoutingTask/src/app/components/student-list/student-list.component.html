@@ -1,0 +1,21 @@
+<h2 class="student-list-heading">List of Students</h2>
+
+<p class="student-instruction">Click on Student Name to show Student Details</p>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Batch Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let studentItem of student">
+      <!-- Student name clickable and navigates to details page -->
+      <td>
+        <a [routerLink]="['/student-profile', studentItem.id]" class="student-link">{{ studentItem.name }}</a>
+      </td>
+      <td>{{ studentItem.batch_number }}</td>
+    </tr>
+  </tbody>
+</table>

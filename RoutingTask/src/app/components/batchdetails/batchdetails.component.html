@@ -1,0 +1,12 @@
+<h2 class="batch-heading">Batch Details</h2>
+
+<!-- Batch Details Card -->
+<div *ngIf="batches" class="batch-card">
+  <p><strong>Batch Id:</strong> {{ batches.id }}</p>
+  <p><strong>Batch Name:</strong> {{ batches.batch_name }}</p>
+</div>
+
+<!-- Batch Not Found Message -->
+<div *ngIf="!batches" class="not-found">
+  <p>Batch not found!</p>
+</div>

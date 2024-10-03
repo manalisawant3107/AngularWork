@@ -1,0 +1,13 @@
+<h2 class="profile-heading">Student Profile</h2>
+
+<!-- Student Profile Card -->
+<div *ngIf="student" class="profile-card">
+  <p><strong>Student Id:</strong> {{ student.id }}</p>
+  <p><strong>Student Name:</strong> {{ student.name }}</p>
+  <p><strong>Batch Number:</strong> {{ student.batch_number }}</p>
+</div>
+
+<!-- Student Not Found Message -->
+<div *ngIf="!student" class="not-found">
+  <p>Student not found!</p>
+</div>

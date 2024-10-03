@@ -1,0 +1,56 @@
+/* Styling for the heading */
+.profile-heading {
+    text-align: center;
+    color: #b10c0c;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Card layout for student profile */
+  .profile-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styling for each profile detail */
+  .profile-card p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .profile-card p strong {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Student not found message */
+  .not-found {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+  }
+  
+  /* Adding responsive behavior */
+  @media (max-width: 768px) {
+    .profile-card {
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    .profile-card p {
+      font-size: 16px;
+    }
+  
+    .profile-heading {
+      font-size: 22px;
+    }
+  }
+  

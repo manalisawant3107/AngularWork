@@ -1,0 +1,19 @@
+<h2 class="batch-list-heading">List of Batches</h2>
+
+<p class="batch-instruction">Click on Batch Name to show Batch Details</p>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Batch Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let batchDetail of batches">
+      <!-- Batch name clickable and navigates to details page -->
+      <td>
+        <a [routerLink]="['/batchDetails', batchDetail.id]" class="batch-link">{{ batchDetail.batch_name }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

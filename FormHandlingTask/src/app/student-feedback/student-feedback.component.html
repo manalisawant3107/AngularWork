@@ -1,0 +1,83 @@
+<h1>Built-in Pipes</h1>
+
+<h2>Uppercase</h2>
+<p>{{ "manali" | uppercase }}</p>
+
+<h2>Lowercase</h2>
+<p>{{ "MANALI" | lowercase }}</p>
+
+<h2>Currency</h2>
+<p>{{ number | currency: "INR" }}</p>
+
+<h2>Decimal</h2>
+<p>{{ num | number: "1.1-3" }}</p>
+
+<h2>Percentage</h2>
+<p>{{ 0.25 | percent }}</p>
+
+<h2>JSON</h2>
+<p>{{ student | json }}</p>
+
+<h2>Date</h2>
+<input type="date" name="birthdate" [(ngModel)]="birthDate" />
+<p>{{ birthDate | date: "dd/MM/yyyy" }}</p>
+
+<h2>i18nSelect</h2>
+<p>{{ gender | i18nSelect: genderMapping }}</p>
+
+<hr />
+
+<h1>Student Feedback Form</h1>
+
+<div class="feedback-form">
+  <form (ngSubmit)="submitForm()" #feedbackForm="ngForm">
+    <div class="form-group">
+      <label for="stud_name">Student Name:</label>
+      <input type="text" name="stud_name" [(ngModel)]="stud_name" #studName="ngModel" required />
+      <div *ngIf="studName.invalid && studName.touched" class="error-msg">
+        Student Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="batch_number">Batch Number:</label>
+      <input type="text" name="batch_number" [(ngModel)]="batch_number" #batchNumber="ngModel" required />
+      <div *ngIf="batchNumber.invalid && batchNumber.touched" class="error-msg">
+        Batch Number is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="feedback">Feedback:</label>
+      <textarea name="feedback" [(ngModel)]="feedback" #feedbackText="ngModel" required></textarea>
+      <div *ngIf="feedbackText.invalid && feedbackText.touched" class="error-msg">
+        Feedback is required.
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="feedbackForm.invalid">Submit</button>
+  </form>
+</div>
+
+<!-- Feedback Table -->
+<div class="feedback-table" *ngIf="showTable">
+  <h2>Submitted Feedback</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Batch Number</th>
+        <th>Feedback</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fb of feedbackList; let i = index">
+        <td>{{ fb.stud_name }}</td>
+        <td>{{ fb.batch_number }}</td>
+        <td>{{ fb.feedback }}</td>
+        <td><button (click)="deleteFeedback(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
